@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Herança
+{
+    class Conta2 : Conta //contajuridica
+    {
+        
+        public double EmprestimoLimite { get; set; }//Declarando as variáveis com encapsulamento
+        
+        public Conta2() { }//construtor
+       
+        public Conta2(int numero, string titular, double saldo, double emprestimoLimite) : base(numero, titular, saldo)
+        {
+        
+            EmprestimoLimite = emprestimoLimite;
+            
+        }
+        public void Emprestimo(double saldoTotal)
+        {
+            if (saldoTotal <= EmprestimoLimite)
+            {
+            
+                Saldo += saldoTotal;
+                
+            }
+        }
+    }
+}
